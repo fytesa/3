@@ -73,6 +73,7 @@ import androidx.navigation.NavDeepLink
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navDeepLink
+import com.example.jetsnack.ui.home.WeatherMapScreen
 import com.example.jetsnack.R
 import com.example.jetsnack.ui.LocalNavAnimatedVisibilityScope
 import com.example.jetsnack.ui.components.JetsnackSurface
@@ -137,6 +138,11 @@ fun NavGraphBuilder.addHomeGraph(onSnackSelected: (Long, String, NavBackStackEnt
             modifier,
         )
     }
+
+    composable(HomeSections.MAP.route) {
+            WeatherMapScreen()
+        }
+
     composable(
         HomeSections.CART.route,
         deepLinks = listOf(
@@ -156,8 +162,9 @@ fun NavGraphBuilder.addHomeGraph(onSnackSelected: (Long, String, NavBackStackEnt
 enum class HomeSections(@StringRes val title: Int, @DrawableRes val icon: Int, val route: String) {
     FEED(R.string.home_feed, R.drawable.ic_home, "home/feed"),
     SEARCH(R.string.home_search, R.drawable.ic_search, "home/search"),
+    MAP(R.string.home_map, R.drawable.ic_search, "home/map"),
     CART(R.string.home_cart, R.drawable.ic_shopping_cart, "home/cart"),
-    PROFILE(R.string.home_profile, R.drawable.ic_account_circle, "home/profile"),
+    PROFILE(R.string.home_profile, R.drawable.ic_account_circle, "home/profile") 
 }
 
 @Composable

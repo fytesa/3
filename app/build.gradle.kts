@@ -115,6 +115,11 @@ dependencies {
 
     implementation(libs.coil.kt.compose)
 
+    implementation(libs.google.location)
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.gson)
+    implementation(libs.osmdroid)
+
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.core)
     androidTestImplementation(libs.androidx.test.runner)

@@ -15,6 +15,7 @@
  */
 
 package com.example.jetsnack.ui
+import com.example.jetsnack.ui.home.WeatherMapScreen
 
 import android.appwidget.AppWidgetManager
 import android.os.Build
@@ -38,7 +39,9 @@ class MainActivity : ComponentActivity() {
                 setWidgetPreviews()
             }
         }
-        setContent { JetsnackApp() }
+        setContent { 
+            JetsnackApp() 
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
